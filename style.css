@@ -1,0 +1,42 @@
+body{
+    background-color: #CCC;
+}
+
+.button{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: none;
+
+
+}
+
+.choiceBtn{
+    background-color: #CCC;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 20px;
+    transition: 150ms;
+}
+
+.choiceBtn:hover{
+    transform: scale(1.3);
+
+}
+
+.texts{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    padding-top: 30px;
+    font-size: 25px;
+}
+#resultText{
+    display: grid;
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 30px;
+}
