@@ -4,9 +4,16 @@ const playerText = document.querySelector("#playerText")
 const computerText = document.querySelector("#computerText")
 const resultText = document.querySelector("#resultText")
 const choiceBtns = document.querySelectorAll(".choiceBtn")
+const win = document.querySelector("#win")
+const draw = document.querySelector("#draw")
+const lose = document.querySelector("#lose")
+
 let player;
 let computer;
 let result;
+let winNum=0;
+let drawNum=0;
+let loseNum=0
 
 
 choiceBtns.forEach(button => button.addEventListener("click", () => {
@@ -15,8 +22,20 @@ choiceBtns.forEach(button => button.addEventListener("click", () => {
     computerTurn();
     playerText.textContent = `Player: ${player}`
     computerText.textContent = `Computer: ${computer}`
-    resultText.textContent = checkWinner()
+    resultText.textContent = `Result:${checkWinner()}`
+    if("You Win!"==checkWinner()){
+        winNum += 1
+        win.textContent = `Wins:${winNum}`
+    }
+    else if("Draw"==checkWinner()){
+        drawNum +=1
+        draw.textContent = `Draw:${drawNum}`
+    }
+    else if("You Lose!"==checkWinner()){
+        loseNum +=1
+        lose.textContent = `Lose:${loseNum}`
 
+    }
 }))
 
 function computerTurn(){

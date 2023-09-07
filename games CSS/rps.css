@@ -40,3 +40,15 @@ body{
     padding-top: 20px;
     font-size: 30px;
 }
+#win{
+    display: flex;
+    justify-content: center;
+}
+#draw{
+    display: flex;
+    justify-content: center;
+}
+#lose{
+    display: flex;
+    justify-content: center;
+}
