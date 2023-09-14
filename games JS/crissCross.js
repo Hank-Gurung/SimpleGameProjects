@@ -1,15 +1,16 @@
 const cells = document.querySelectorAll(".cell")
 const stautsText = document.querySelector("#statusText")
 const restartBtn = document.querySelector("#restartBtn")
+const board = document.querySelector("#board")
 const winCondition = [
-    [0,1,2,600,50,0],
-    [3,4,5,600,150,0],
-    [6,7,8,600,255,0],
-    [0,4,8,553,150,45],
-    [2,4,6,553,150,135],
-    [0,3,6,500,150,90],
-    [2,5,8,700,150,90],
-    [1,4,7,600,150,90]
+    [0,1,2,600,50,0,330],
+    [3,4,5,600,150,0,330],
+    [6,7,8,600,255,0,330],
+    [0,4,8,553,150,45,430],
+    [2,4,6,553,150,135,430],
+    [0,3,6,500,150,90,330],
+    [2,5,8,700,150,90,330],
+    [1,4,7,600,150,90,330]
 ]
 
 let options = ["", "", "", "", "", "", "", "", ""]
@@ -40,6 +41,10 @@ function updateCell(cell, index){
 function changePlayer(){
     currentPlayer = (currentPlayer == "X") ? "O" : "X"
     stautsText.textContent = ` ${currentPlayer}'s turn`
+
+    if(currentPlayer == "O"){
+        computerTurn()
+    }
 }
 function checkWinner(){
     let roundWon = false
@@ -57,7 +62,7 @@ function checkWinner(){
             roundWon = true
             document.querySelector(".line").style.cssText = `background-color: black;
                                                                     height: 3px;
-                                                                    width: 330px;
+                                                                    width: ${condition[6]}px;
                                                                     transform: translate(${[condition[3]]}px,${[condition[4]]}px) rotate(${[condition[5]]}deg)`
 
             break
@@ -82,4 +87,14 @@ function restart(){
     cells.forEach(cell => cell.textContent = "")
     running = true
     document.querySelector(".line").style.cssText = `none`
+}
+
+function computerTurn(){
+    let num = Math.round(Math.random() * 8)
+    if(options[num] != ""){
+        computerTurn()
+
+    }
+    const cell = board.querySelector('[cellIndex="'+num+'"]')
+    cell.click()
 }
