@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="games CSS/crissCross.css">
+
+</head>
+<body>
+    <div class="gameCon" id="gameCon">
+        <h1>Criss Cross</h1>
+        <div class="line">
+            
+        </div>
+        <div class="board" id="board">
+            <div cellIndex="0" class="cell" ></div>
+            <div cellIndex="1" class="cell" ></div>
+            <div cellIndex="2" class="cell" ></div>
+            <div cellIndex="3" class="cell" ></div>
+            <div cellIndex="4" class="cell" ></div>
+            <div cellIndex="5" class="cell" ></div>
+            <div cellIndex="6" class="cell" ></div>
+            <div cellIndex="7" class="cell" ></div>
+            <div cellIndex="8" class="cell" ></div>
+        </div>
+        <h2 class="statusText" id="statusText"></h2>
+        <div class="winning-message" id="winningMessage">
+            <button id="restartBtn">Restart</button>
+        </div>
+
+    </div>
+    <script src="games JS/crissCrossPvAI.js"></script>
+</body>
+</html>
